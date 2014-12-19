@@ -62,7 +62,6 @@ c br.1 habitatright turnright 0 -5.0 5.0
 
 c hd.1 holedepth dig 0 -5.0 0.0
 
-// These were removed before
 c eg.2 energy findhole 0 -5.0 5.0
 c eg.3 energy dighole 0 -5.0 5.0
 
@@ -85,12 +84,6 @@ c ev.4 evade dighole 1 -5.0 5.0
 //c hd.4 hide dighole 1 -5.0 5.0
 
 c dh.1 dighole dig 1 0.0 5.0
-
-// Experimental
-c ev.6 evade habitatleft 1 -5.0 5.0
-c ev.7 evade habitatright 1 -5.0 5.0
-//c hd.5 hide habitatleft 1 -5.0 5.0
-//c hd.6 hide habitatright 1 -5.0 5.0
 
 // Bias Connections
 
@@ -137,10 +130,6 @@ l fl.1 fr.1
 l pl.1 pr.1
 l hl.1 hr.1
 l bl.1 br.1
-
-// Experimental
-l ev.6 ev.7
-//l hd.5 hd.6
 
 
 

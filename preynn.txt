@@ -12,7 +12,7 @@ s holeright 0
 s holedepth 0
 s habitatleft 0
 s habitatright 0
-//s hearshout 0
+s hearshout 0
 s energy 0
 s hunger 0
 
@@ -20,7 +20,7 @@ s hunger 0
 n findfood 0
 n wander 0
 n evade 0
-//n hide 0
+n hide 0
 n dighole 0
 n findhole 0
 
@@ -30,7 +30,7 @@ e turnright 0
 e eat 1
 e dig 0
 e enterhole 1
-//e shout 0
+e shout 0
 
 // Bias
 s bias 0 1.0
@@ -58,17 +58,16 @@ c hr.3 holeleft enterhole 1 -5.0 5.0
 c bl.1 habitatleft turnleft 0 -5.0 5.0
 c br.1 habitatright turnright 0 -5.0 5.0
 
-//c hs.1 hearshout hide 0 -5.0 5.0
+c hs.1 hearshout hide 0 -5.0 5.0
 
 c hd.1 holedepth dig 0 -5.0 0.0
 
-// These were removed before
 c eg.2 energy findhole 0 -5.0 5.0
 c eg.3 energy dighole 0 -5.0 5.0
 
 c hg.1 hunger findfood 1 0.0 5.0
 c hg.2 hunger wander 1 0.0 5.0
-//c hg.3 hunger shout 0 -5.0 0.0
+c hg.3 hunger shout 0 -5.0 0.0
 
 c ff.1 findfood dighole 0 -5.0 0.0
 c ff.2 findfood findhole 0 -5.0 0.0
@@ -77,34 +76,28 @@ c ev.1 evade findfood 0 -5.0 0.0
 c ev.2 evade wander 0 -5.0 0.0
 c ev.3 evade findhole 1 -5.0 5.0
 c ev.4 evade dighole 1 -5.0 5.0
-//c ev.5 evade shout 1 -5.0 5.0
+c ev.5 evade shout 1 -5.0 5.0
 
-//c hd.1 hide findfood 0 -5.0 0.0
-//c hd.2 hide wander 0 -5.0 0.0
-//c hd.3 hide findhole 1 -5.0 5.0
-//c hd.4 hide dighole 1 -5.0 5.0
+c hd.1 hide findfood 0 -5.0 0.0
+c hd.2 hide wander 0 -5.0 0.0
+c hd.3 hide findhole 1 -5.0 5.0
+c hd.4 hide dighole 1 -5.0 5.0
 
 c dh.1 dighole dig 1 0.0 5.0
-
-// Experimental
-c ev.6 evade habitatleft 1 -5.0 5.0
-c ev.7 evade habitatright 1 -5.0 5.0
-//c hd.5 hide habitatleft 1 -5.0 5.0
-//c hd.6 hide habitatright 1 -5.0 5.0
 
 // Bias Connections
 
 c b.1 bias findfood 0 -5.0 5.0
 c b.2 bias wander 0 -5.0 5.0
 c b.3 bias evade 0 -5.0 5.0
-//c b.8 bias hide 0 -5.0 5.0
+c b.8 bias hide 0 -5.0 5.0
 c b.4 bias findhole 0 -5.0 5.0
 c b.5 bias dighole 0 -5.0 5.0
 
 c b.7 bias eat 0 -5.0 5.0
 c b.5 bias dig 0 -5.0 5.0
 c b.6 bias enterhole 0 -5.0 5.0
-//c b.7 bias shout 0 -5.0 5.0
+c b.7 bias shout 0 -5.0 5.0
 
 
 
@@ -137,10 +130,6 @@ l fl.1 fr.1
 l pl.1 pr.1
 l hl.1 hr.1
 l bl.1 br.1
-
-// Experimental
-l ev.6 ev.7
-//l hd.5 hd.6
 
 
 
