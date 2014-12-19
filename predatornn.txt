@@ -1,0 +1,15 @@
+// Neurons
+// [s/e/n] neuron_name activation:0=sigmoid,1=step [default_value] 
+s preyleft 0
+s preyright 0
+e turnleft 0
+e turnright 0
+n bias 0 1.0
+
+// Connections
+// c connection_name from_neuron to_neuron learnable:0=false,1=true [default_weight]
+c c1 preyleft turnleft 0 -5.0 5.0 3.0
+c c2 preyright turnright 0 -5.0 5.0 3.0
+
+c c3 bias turnleft 0 -5.0 5.0 1.0
+c c4 bias turnright 0 -5.0 5.0 1.0

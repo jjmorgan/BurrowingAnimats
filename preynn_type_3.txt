@@ -1,0 +1,156 @@
+//// Neurons
+
+// [s/e/n] neuron_name activation:0=sigmoid,1=step [default_value] 
+
+// Sensors
+s foodleft 0
+s foodright 0
+s predatorleft 0
+s predatorright 0
+s holeleft 0
+s holeright 0
+s holedepth 0
+s habitatleft 0
+s habitatright 0
+s hearshout 0
+s energy 0
+s hunger 0
+
+// Motivations
+n findfood 0
+n wander 0
+n evade 0
+n hide 0
+n dighole 0
+n findhole 0
+
+// Effectors
+e turnleft 0
+e turnright 0
+e eat 1
+e dig 0
+e enterhole 1
+e shout 0
+
+// Bias
+s bias 0 1.0
+
+
+
+//// Connections
+
+// c connection_name neuron_from neuron_to learnable:0=false,1=true min_value max_value [default_weight]
+
+c fl.1 foodleft turnleft 0 -5.0 5.0
+c fr.1 foodright turnright 0 -5.0 5.0
+c fl.2 foodleft wander 0 -5.0 0.0
+c fl.3 foodleft eat 1 -5.0 5.0
+
+c pl.1 predatorleft turnright 0 -5.0 5.0
+c pr.1 predatorright turnleft 0 -5.0 5.0
+c pl.2 predatorleft evade 1 -5.0 5.0
+
+c hl.1 holeleft turnleft 0 -5.0 5.0
+c hr.1 holeright turnright 0 -5.0 5.0
+c hr.2 holeleft wander 0 -5.0 0.0
+c hr.3 holeleft enterhole 1 -5.0 5.0
+
+c bl.1 habitatleft turnleft 0 -5.0 5.0
+c br.1 habitatright turnright 0 -5.0 5.0
+
+c hs.1 hearshout hide 0 -5.0 5.0
+
+c hd.1 holedepth dig 0 -5.0 0.0
+
+// These were removed before
+c eg.2 energy findhole 0 -5.0 5.0
+c eg.3 energy dighole 0 -5.0 5.0
+
+c hg.1 hunger findfood 1 0.0 5.0
+c hg.2 hunger wander 1 0.0 5.0
+c hg.3 hunger shout 0 -5.0 0.0
+
+c ff.1 findfood dighole 0 -5.0 0.0
+c ff.2 findfood findhole 0 -5.0 0.0
+
+c ev.1 evade findfood 0 -5.0 0.0
+c ev.2 evade wander 0 -5.0 0.0
+c ev.3 evade findhole 1 -5.0 5.0
+c ev.4 evade dighole 1 -5.0 5.0
+c ev.5 evade shout 1 -5.0 5.0
+
+c hd.1 hide findfood 0 -5.0 0.0
+c hd.2 hide wander 0 -5.0 0.0
+c hd.3 hide findhole 1 -5.0 5.0
+c hd.4 hide dighole 1 -5.0 5.0
+
+c dh.1 dighole dig 1 0.0 5.0
+
+// Experimental
+c ev.6 evade habitatleft 1 -5.0 5.0
+c ev.7 evade habitatright 1 -5.0 5.0
+c hd.5 hide habitatleft 1 -5.0 5.0
+c hd.6 hide habitatright 1 -5.0 5.0
+
+// Bias Connections
+
+c b.1 bias findfood 0 -5.0 5.0
+c b.2 bias wander 0 -5.0 5.0
+c b.3 bias evade 0 -5.0 5.0
+c b.8 bias hide 0 -5.0 5.0
+c b.4 bias findhole 0 -5.0 5.0
+c b.5 bias dighole 0 -5.0 5.0
+
+c b.7 bias eat 0 -5.0 5.0
+c b.5 bias dig 0 -5.0 5.0
+c b.6 bias enterhole 0 -5.0 5.0
+c b.7 bias shout 0 -5.0 5.0
+
+
+
+//// Axoaxonal Connections
+
+// x axoconnection_name neuron_from connection_to min_value max_value
+
+x ff.a.1 findfood fl.1 -5.0 5.0
+x ff.a.2 findfood fr.1 -5.0 5.0
+x ff.a.3 findfood fl.3 -5.0 5.0
+
+x wd.a.1 wander bl.1 -5.0 5.0
+x wd.a.2 wander br.1 -5.0 5.0
+
+//x ev.a.1 evade pl.1 -5.0 5.0
+//x ev.a.2 evade pr.1 -5.0 5.0
+
+x fh.a.1 findhole hl.1 -5.0 5.0
+x fh.a.2 findhole hr.1 -5.0 5.0
+
+x fh.a.3 findhole hr.3 -5.0 5.0
+
+
+
+//// Linked Connections (Temporary)
+
+// l connection_name connection_name
+
+l fl.1 fr.1
+l pl.1 pr.1
+l hl.1 hr.1
+l bl.1 br.1
+
+// Experimental
+l ev.6 ev.7
+l hd.5 hd.6
+
+
+
+//// Linked Axoaxonal Connections (Temporary)
+
+// k axoconnection_name axoconnection_name
+
+k ff.a.1 ff.a.2
+k wd.a.1 wd.a.2
+//k ev.a.1 ev.a.2
+k fh.a.1 fh.a.2
+
+
