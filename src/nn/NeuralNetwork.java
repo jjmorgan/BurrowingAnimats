@@ -133,7 +133,9 @@ public class NeuralNetwork {
 		for (int i = 0; i < this.connections.size(); i++) {
 			Connection c = this.connections.elementAt(i);
 			double weight_parent = parent.connections.elementAt(i).getWeight();
-			double weight_change = (-MUTATE_MAX + this.random.nextDouble() * (2 * MUTATE_MAX));
+			double min = -1 * Math.min(weight_parent - c.weight_min, MUTATE_MAX);
+			double max = Math.min(c.weight_max - weight_parent, MUTATE_MAX);
+			double weight_change = min + this.random.nextDouble() * (max - min);
 			if ((weight_parent <= c.weight_min && weight_change < 0)
 					|| (weight_parent >= c.weight_max && weight_change > 0))
 				weight_change *= -1.0;
