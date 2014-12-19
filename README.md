@@ -1,5 +1,5 @@
-BurrowingAnimats
-================
+Burrowing Animats
+=================
 
 Simulates the evolution of simple robots that dig burrows to survive in a hostile environment. Requires Java 6 to run.
 

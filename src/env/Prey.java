@@ -265,7 +265,7 @@ public class Prey extends Animat {
 
 		// Eating
 		if (this.controller.getNeuronValue("eat") == 1.0)
-			this.energy_consumption += 0.3;
+			this.energy_consumption += 0.1;
 		
 		// Shouting
 		double shout = this.controller.getNeuronValue("shout") - 0.5;
